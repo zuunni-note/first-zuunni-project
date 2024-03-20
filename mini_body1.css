@@ -1,0 +1,233 @@
+/* 프리텐다드 */
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+/* 고운 돋음 */
+@font-face {
+    font-family: 'GowunDodum-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.recent_music{
+    position: relative;
+    width: 942px;
+    height: 368px;
+    margin: 0 auto;
+    padding-bottom: 314px;
+}
+
+.recent_music .mainnav{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.recent_music .sub_title{
+    display: inline-block;
+}
+
+.left{
+    width: 200px;
+}
+
+.right{
+    width: 200px;
+    display: flex;
+    justify-content: end;
+    padding-right: 10px;
+    position: absolute;
+    top: 12px;
+    right: -2px;
+}
+.right .numbertext{
+    display: block;
+    width: 100px;
+    color: #8b8b8b;
+    text-align: right;
+    position: relative;
+}
+.right a{
+    text-decoration: none;
+    width: 28px;
+    height: 28px;
+    margin: 0px 2px 0px 5px;
+    font-size: medium;
+    text-align: center;
+    border: 1px solid #d2d2d2;
+    border-radius: 50%;
+    color: black;
+}
+
+.sub_title a{
+    color: #444444;
+    font-size: 18px;
+    font-family: 'Pretendard-Regular';
+}
+#tab {
+    display: inline;
+}
+.recent_music #tab li{
+    display: inline-block;
+}
+#tab>li>button{
+    font-family: 'GowunDodum-Regular';
+    color: #8b8b8b;
+    cursor: pointer;
+    vertical-align: baseline;
+    font-size: 12px;
+    display: inline-block;
+    padding: 0 8px;
+    border: 0;
+    background: transparent none;
+    padding-top: 18px;
+}
+
+#slash{
+    font-size: medium;
+}
+
+#tab>li>button:active{
+    color: #0096ff;
+    font-weight: bold;
+}
+
+#tab>li>button:focus{
+    color: #0096ff;
+    font-weight: bold;
+}
+
+.allcover .album-wrap .mask input{
+    width: 151px;
+    height: 151px;
+    border:none;
+    cursor: pointer;
+    position: absolute;
+    /* background-color: transparent; */
+    
+}
+
+.allcover .album-wrap{
+    display: inline-block;
+    position:relative;
+    width: 151px;
+    height: 151px;
+    margin-bottom: 8px;
+
+}
+
+
+
+.recent_music .allcover{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 942px;
+    justify-content: space-between;
+}
+
+.mask{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    position: absolute;
+}
+
+.allcover .mask::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 151px;
+    height: 75px;
+    background: url(//image.genie.co.kr/imageg/web/main/mask_recent.png) no-repeat 0 0;
+}
+
+.info-album{
+    display: flex;
+    border:1px solid red;
+    width: 151px;
+    height: 151px;
+    position: absolute;
+    top:0;
+    opacity: 0;
+    background-color: rgba(0,0,0);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.info-album:hover{
+    opacity: 0.7;
+    z-index:2
+}
+
+h2{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.tit{
+    height: 35px;
+    z-index: 1;
+    text-align: center;
+    width: 135px;
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 50%;
+    bottom: 0%;
+    color: white;
+    font-size: 12px;
+    line-height: 35px;
+    overflow: hidden;
+}
+
+
+#current{
+    position: absolute;
+    right: 18px;
+    top: 3px;
+}
+
+.info-album{
+    display: flex;
+    border:none;
+    width: 151px;
+    height: 151px;
+    position: absolute;
+    top:0;
+    opacity: 0;
+    background-color: rgba(0,0,0);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hover_title{
+    width: 151px;
+    height: 151px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    top:0;
+}
+.hover_title>a{
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.hover_title > .artist{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 151px;
+    padding: 0px 8px 0px 8px;
+}
+

@@ -1,0 +1,290 @@
+/* 프리텐다드 */
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+/* 고운 돋음 */
+@font-face {
+    font-family: 'GowunDodum-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: middle;
+    background: transparent;
+    box-sizing: border-box;
+    font-family: 'GowunDodum-Regular';
+}
+.container{
+    width: 100%;
+    height: 155px;
+    margin-bottom: 14px;
+    font-family: 'GowunDodum-Regular';
+    border-bottom: 1px solid #d2d2d2;
+    
+}
+.container .header{
+    width: 940px;
+    height: 155px;
+    padding: 0px;
+    margin: 32px auto 0px auto ;
+}
+
+.container .header .searchcont{
+    display: flex;
+    padding-top: 15px;
+    align-items: center;
+}
+.header fieldset{
+  position: relative;
+  width: 366px;
+  height: 36px;
+  border-bottom: 2px solid #0096ff;
+  display: inline-block;
+}
+.header fieldset #search{
+    float: left;
+    width: 318px;
+    height: 32px;
+    border: 0;
+    font: 14px ;
+    font-weight: normal;
+}
+
+.header fieldset #searchLogo{
+    width: 44px;
+    height: 32px;
+    padding: 1px 6px;
+}
+.container .nav{
+    display: flex;
+    justify-content: space-between;
+}
+.container .nav #topMenu{
+    display: flex;
+    margin-top: 50px;
+    justify-content: space-between;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+#topMenu>li{
+    position:relative;
+}
+#topMenu>li>a{
+   width: fit-content;
+    cursor: pointer;
+    color: #27282D;
+    font-family: 'Pretendard-Regular';
+    font-size: 18px;
+    font-weight: 700;
+    padding: 0 27px 14px 0;
+    display: block;
+    position: relative;
+    height: 24px;
+}
+#topMenu>li>a:hover{
+    color: #0096ff;
+}
+
+#topMenu>li:hover>ul{
+    display: block;
+    z-index: 10;
+}
+#topMenu>li>ul{
+    position: absolute;
+    padding: 5px 0 4px;
+    border: 1px solid #a6afb6;
+    border-top: 3px solid #0096FF;
+    border-radius: 0 0 4px 4px;
+    background-color: #fff;
+    z-index: 1;
+    zoom: 1;
+    top: 32px;
+}
+#topMenu>li>ul>li>a{
+    display: block;
+    padding: 5px 16px 3px;
+    color: #27282d;
+    white-space: nowrap
+}
+#login{
+    width: 134px;
+    height: 29px;
+    margin-top: 50px;
+    position: relative;
+}
+
+#login .loginlist{
+    position: absolute;
+    width: 308px;
+    height: 310px;
+    background-color: #fff;
+    z-index: 10;
+    top: 24px;
+    right: 0px;
+    display: none;
+    border: 1px solid #d2d2d2;
+    border-collapse: collapse;
+    border-top: none;
+}
+#login button{
+    position: relative;
+    padding: 0 18px 0 5px;
+    border: 0;
+    font-size: 14px;
+    background: none transparent;
+    color: #444;
+    letter-spacing: 0;
+    font-family: "돋움";
+}
+
+#login button::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 4px;
+    right: 5px;
+    width: 10px;
+    height: 6px;
+    background: url(//image.genie.co.kr/imageg/web/blt/hd.png) -15px -19px;
+
+}
+#login .open::before{
+    background-position: 0 -19px;
+}
+
+#login .list{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.login_form{
+    width: 306px;
+    height: 112px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 1px solid #d2d2d2;
+}
+
+.login_form .btn-login{
+    display: block;
+    width: 268px;
+    height: 50px;
+    margin-bottom: 8px;
+    padding-top: 11px;
+    border: 1px solid #0096FF;
+    background-color: #0096FF;
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+}
+.txt{
+    display: inline-block;
+    position: relative;
+    padding: 0 0 0 52px;
+    font-size: 14px;
+    font-weight: bold;
+    width: 97px;
+    height: 27px;
+    font-family: "돋움";
+    line-height: 27px;
+}
+.txt::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 1px;
+    left: 0;
+    width: 50px;
+    height: 25px;
+    background: url(//image.genie.co.kr/imageg/web/blt/login_201222.png) no-repeat 0 -50px;
+    background-size: 94px 73px;
+}
+
+.btn-reg{
+    width: 268px;
+    height: 27px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 27px;
+}
+button{
+    cursor: pointer;
+}
+
+#topMenu>li>ul{
+    display: none;
+}
+
+.find-account>a{
+    color: #666666;
+    font-size: 12px;
+    font-family: "돋움";
+}
+
+.regist a{
+    color: #666666;
+    font-weight: bold;
+    font-size: 12px;
+    font-family: "돋움";
+}
+
+.list-login{
+    width: 268px;
+    height: 198px;
+    margin: 20px auto;
+}
+
+.list-login a{
+    display: block;
+    overflow: hidden;
+    position: relative;
+    height: 38px;
+    margin-bottom: 6px;
+    padding: 0 0 0 48px;
+    border: 1px solid #d2d2d2;
+    border-radius: 2px;
+    line-height: 41px;
+    color: #666666;
+}
+
+.list-login a::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 28px;
+    height: 28px;
+    background: url(//image.genie.co.kr/imageg/web/blt/login_200407.png) no-repeat 0 0;
+}
+
+#btn-fb::before{
+    background-position: -33px 0;
+}
+
+#btn-twitter::before{
+    background-position: -66px 0;
+}
+
+#btn-apple::before{
+    background-position: -133px 0;
+}

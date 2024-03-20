@@ -1,0 +1,107 @@
+.allcover .album-wrap .mask input{
+    width: 151px;
+    height: 151px;
+    border:1px solid blue;
+    cursor: pointer;
+    position: absolute;
+    /* background-color: transparent; */
+    
+}
+.allcover .album-wrap{
+    display: inline-block;
+    position:relative;
+    width: 151px;
+    height: 151px;
+    margin-bottom: 8px;
+
+}
+
+.mask{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    position: absolute;
+}
+
+
+
+
+
+.info-album{
+    display: flex;
+    border:1px solid red;
+    width: 151px;
+    height: 151px;
+    position: absolute;
+    top:0;
+    opacity: 0;
+    background-color: rgba(0,0,0);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.info-album:hover{
+    opacity: 0.7;
+    z-index:2
+}
+
+.recent_music .allcover{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 942px;
+    justify-content: space-between;
+}
+
+h2{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.tit{
+    height: 35px;
+    z-index: 1;
+    text-align: center;
+    width: 135px;
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 50%;
+    bottom: 0%;
+    color: white;
+    font-size: 12px;
+    line-height: 35px;
+    overflow: hidden;
+}
+
+.bg{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    position: absolute;
+}
+
+.allcover .mask::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 151px;
+    height: 75px;
+    background: url(//image.genie.co.kr/imageg/web/main/mask_recent.png) no-repeat 0 0;
+}
+
+.hover_title{
+    width: 151px;
+    height: 151px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    top:0;
+
+}
+.hover_title>a{
+    color: #fff;
+}

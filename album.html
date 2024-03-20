@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style4.css">
+</head>
+<body>
+    <div class="allcover">
+        <span class="album-wrap">
+            <!-- after -->
+            <span class="mask">
+                
+                <input type="image" src="/img/kpop1.jpg">
+                <span class="tit">아이유 (IU)</span>
+            </span>
+            <div class="info-album">
+                <span class="hover_title">
+                    <a href="#" class="artist">아이유 (IU)</a>
+                    <a href="#" class="album-title">The Winning</a>
+                </span>
+            </div>
+        </span>
+    </div>
+    <script>
+        let info_album = document.querySelector(".info-album");
+
+        info_album.addEventListener("click", function (event) {
+            window.replace = "경로";
+        });
+
+    </script>
+</body>
+</html>

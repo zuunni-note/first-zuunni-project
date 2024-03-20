@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인팝업창</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            font-size: 100%;
+            vertical-align: middle;
+            background: transparent;
+            box-sizing: border-box;
+            font-family: 'GowunDodum-Regular';
+        }
+        body{
+            line-height: 1.5;
+            font-family: dotum, '돋움', sans-serif, Segoe UI Symbol;
+            font-size: 12px;
+            font-weight: normal;
+            color: #444;
+        }
+        .loginForm{
+            position: relative;
+            padding: 15px 19px 6px;
+            border-bottom: 1px solid #d2d2d2
+        }
+        h1{
+            display: block;
+            padding: 19px 0 0 19px;
+            font: bold 16px 'Malgun Gothic', 'ë§‘ì€ ê³ ë”•', 'Nanum Gothic', 'ë‚˜ëˆ” ê³ ë”•', dotum, sans-serif;
+        }
+        .idpass input{
+            width: 335px;
+            height: 38px;
+            padding: 0px 9px 0px 9px;
+        }
+        #user_id , #user_pw{
+            width: 335px;
+            height: 37px;
+            padding: 0 9px;
+            border: 1px solid #d2d2d2;
+            font-size: 11px;
+        }
+        .log input{
+            position: absolute;
+            top: 15px;
+            right: 19px;
+            width: 80px;
+            height: 74px;
+            border: 1px solid #0096FF;
+            font-size: 12px;
+            background-color: #0096FF;
+            color: #fff;
+            font-weight: bold;
+        }
+        .chk{
+            padding: 13px 0 12px
+        }
+
+        a{
+            color: #444;
+            margin: 0;
+            padding: 0;
+            font-size: 100%;
+            text-decoration: none;
+        }
+
+        .text-bold{
+            font-weight: bold;
+        }
+        .find{
+            width: 413px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .list-login{
+            width: 453px;
+            height: 224px;
+            padding: 20px 19px;
+        }
+        ul{
+            list-style: none;
+        }
+        .list-login a{
+            display: block;
+            overflow: hidden;
+            position: relative;
+            height: 38px;
+            margin-bottom: 6px;
+            padding: 0 0 0 48px;
+            border: 1px solid #d2d2d2;
+            border-radius: 2px;
+            line-height: 41px;
+            color: #666666;
+        }
+
+        
+
+        .list-login a::before{
+            content: '';
+            display: block;
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 28px;
+            height: 28px;
+            background: url(//image.genie.co.kr/imageg/web/blt/login_200407.png) no-repeat 0 0;
+        }       
+
+        #btn-fb::before{
+            background-position: -33px 0;
+        }
+
+        #btn-twitter::before{
+            background-position: -66px 0;
+        }   
+
+        #btn-apple::before{
+            background-position: -133px 0;
+        }
+
+        .log input:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>genie 로그인</h1>
+    <form action="" class="loginForm">
+        <div class="idpass">
+            <input type="text" id="user_id" name="user_id" maxlength="12" placeholder="아이디" title="아이디를 입력하세요." autofocus>
+            <input type="password" id="user_pw" name="user_pw" maxlength="20" placeholder="비밀번호" title="비밀번호를 입력하세요.">
+        </div>
+        <div class="log">
+            <input type="submit" class="btn-submit" onclick="loginID(); return false;" value="로그인">
+        </div>
+        <div class="chk">
+            <input type="checkbox" id="check_id">
+            <label for="check_id">아이디 기억하기</label>
+        </div>
+        <div class="find">
+            <span class="find-account">
+				<a href="#" onclick="fnGoFindId(); return false;">아이디 찾기</a>
+				<a href="#" onclick="fnGoFindPw(); return false;">비밀번호 찾기</a>
+			</span>
+            <a href="#" class="text-bold" onclick="fnGoJoin(); return false;" target="_blank">회원가입</a>
+        </div>
+    </form>
+    <ul class="list-login">
+        <li>
+            <a href="#" class="btn-kakao" onclick="$('#chk_long_main').hide(); $('#gnb_uxglk').prop('checked', false); loginWithKakao(); return false;">카카오 로그인</a>
+        </li>
+        <li>
+            <a href="#"  id= "btn-fb" class="btn-fb" onclick="$('#chk_long_main').hide(); $('#gnb_uxglk').prop('checked', false); loginFB(1); return false;">페이스북 로그인</a>
+        </li>
+        <li>
+            <a href="#" id="btn-twitter" class="btn-twitter" onclick="$('#chk_long_main').hide(); $('#gnb_uxglk').prop('checked', false); loginTW(1); return false;">트위터 로그인</a>
+        </li>
+        <li>
+            <a href="#" id="btn-apple" class="btn-apple" onclick="$('#chk_long_main').hide(); $('#gnb_uxglk').prop('checked', false); appleLogin(); return false;">애플 로그인</a>
+        </li>
+    </ul>
+    <script src="login.js"></script>
+</body>
+</html>

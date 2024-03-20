@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지니 : 음악, 그리고 설레임</title>
+    <link rel="stylesheet" href="mini_head.css">
+    <link rel="stylesheet" href="mini_body1.css">
+    <link rel="stylesheet" href="banner.css">
+    <link rel="stylesheet" href="list.css">
+    <link rel="stylesheet" href="minieditor.css">
+    <link rel="stylesheet" href="minivideo.css">
+    <link rel="stylesheet" href="footer.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="searchcont">
+                <a href="#"><img src="/img/logo.png" alt="로고"></a>
+                <fieldset>
+                    <input type="text" id="search" placeholder="뮤지션으로 성장하는 내만내불 싱어송라이돌">
+                    <input type="image" id="searchLogo" src="/img/searchlogo.png">
+                </fieldset>
+            </div>
+            <div class="nav">
+                <ul id="topMenu">
+                    <li><a href="#">지니차트</a>
+                        <ul>
+                            <li><a href="#">TOP200</a></li>
+                            <li><a href="#">장르별 차트</a></li>
+                            <li><a href="#">시대별 차트</a></li>
+                            <li><a href="#">뮤직비디오 차트</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">최신음악</a>
+                        <ul>
+                            <li><a href="#">최신곡</a></li>
+                            <li><a href="#">최신앨범</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">장르음악</a>
+                        <ul>
+                            <li><a href="#">가요</a></li>
+                            <li><a href="#">POP</a></li>
+                            <li><a href="#">OST</a></li>
+                            <li><a href="#">트롯</a></li>
+                            <li><a href="#">EDM</a></li>
+                            <li><a href="#">JAZZ</a></li>
+                            <li><a href="#">CLASSIC</a></li>
+                            <li><a href="#">JPOP</a></li>
+                            <li><a href="#">CCM</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">영상</a>
+                        <ul>
+                            <li><a href="#">홈</a></li>
+                            <li><a href="#">뮤직비디오</a></li>
+                            <li><a href="#">뮤지션</a></li>
+                            <li><a href="#">이색영상</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">추천</a>
+                        <ul>
+                            <li><a href="#">추천</a></li>
+                            <li><a href="#">인기</a></li>
+                            <li><a href="#">태그</a></li>
+                            <li><a href="#">히스토리</a></li>
+                        </ul>
+                    </li>        
+                </ul>
+                <div id="login">
+                    <button type="button">로그인/회원가입</button>
+                    <div class="loginlist">
+                        <div class="login_form">
+                            <a href="#" class="btn-login" title="새창 열림" onclick="loginPopup(); return false;"><span class="txt">로그인</span></a>
+                            <div class="btn-reg">
+                                <div>
+                                    <span class="find-account">
+                                        <a href="#">아이디 찾기</a>
+                                        <a href="#">비밀번호 찾기</a>
+                                    </span>
+                                </div>
+                                <div class="regist">
+                                    <a href="#" onclick="fnGoJoin(); return false" target="_blank">회원가입</a>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="list-login">
+                            <li>
+                                <a href="#" class="btn-kakao" onclick="$('#chk_long_main').hide(); $('#gnb_uxglk').prop('checked', false); loginWithKakao(); return false;">카카오 로그인</a>
+                            </li>
+                            <li>
+                                <a href="#"  id= "btn-fb" class="btn-fb" onclick="$('#chk_long_main').hide(); $('#gnb_uxglk').prop('checked', false); loginFB(1); return false;">페이스북 로그인</a>
+                            </li>
+                            <li>
+                                <a href="#" id="btn-twitter" class="btn-twitter" onclick="$('#chk_long_main').hide(); $('#gnb_uxglk').prop('checked', false); loginTW(1); return false;">트위터 로그인</a>
+                            </li>
+                            <li>
+                                <a href="#" id="btn-apple" class="btn-apple" onclick="$('#chk_long_main').hide(); $('#gnb_uxglk').prop('checked', false); appleLogin(); return false;">애플 로그인</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="recent_music">
+        <div class="mainnav">
+            <div class="left">
+                <h2 class="sub_title"><a href="">최신음악</a></h2>
+                <ul id="tab">
+                    <li><button type="button" autofocus>종합</button></li>
+                    <li><button type="button">국내</button></li>
+                    <li><button type="button">국외</button></li>
+                </ul>
+            </div>
+            <div class="right">
+                <div class="numbertext"><strong><span id="current"></span></strong><span id="slash"> /</span><span id="total"></span></div>
+                <a href="#" id="prevBttn">&lang;</a>
+                <a href="#" id="nextBttn">&rang;</a>
+            </div>
+        </div>
+        <div class="allcover">
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop1.jpg">
+                    <span class="tit">아이유 (IU)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">아이유 (IU)</a>
+                        <a href="#" class="album-title">The Winning</a>
+                    </span>
+                </div>
+            </span>
+           
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop2.jpg">
+                    <span class="tit">구본겸 (RB NINE)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">구본겸 (RB NINE)</a>
+                        <a href="#" class="album-title">눈에는 눈</a>
+                    </span>
+                </div>
+            </span>
+            
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop3.jpg">
+                    <span class="tit">박진영 &amp; Stray Kids (스트레이 키즈) &amp; ITZY (있지) &amp; NMIXX</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">박진영 &amp; Stray Kids (스트레이 키즈) &amp; ITZY (있지) &amp; NMIXX</a>
+                        <a href="#" class="album-title">Like Magic</a>
+                    </span>
+                </div>
+            </span>
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop4.jpg">
+                    <span class="tit">스웨덴세탁소</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">스웨덴세탁소</a>
+                        <a href="#" class="album-title">유일</a>
+                    </span>
+                </div>
+            </span>
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop5.jpg">
+                    <span class="tit">문별 (마마무)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">문별 (마마무)</a>
+                        <a href="#" class="album-title">Starlit of Muse</a>
+                    </span>
+                </div>
+    
+            </span>
+    
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop6.jpg">
+                    <span class="tit">예빛</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">예빛</a>
+                        <a href="#" class="album-title">불안한 내 맘 달랠 곳은 너밖에 없어 (바고바고 X 예빛)</a>
+                    </span>
+                </div>
+            </span>
+           
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop7.jpg">
+                    <span class="tit">알레프 (ALEPH)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">알레프 (ALEPH)</a>
+                        <a href="#" class="album-title">Natural I</a>
+                    </span>
+                </div>
+            </span>
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop8.jpg">
+                    <span class="tit">브린 (Bryn)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">브린 (Bryn)</a>
+                        <a href="#" class="album-title">여전히</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop9.jpg">
+                    <span class="tit">안재우</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">안재우</a>
+                        <a href="#" class="album-title">Intermission</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop10.jpg">
+                    <span class="tit">팝핀현준 &amp; 박애리</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">팝핀현준 &amp; 박애리</a>
+                        <a href="#" class="album-title">난리가 났네</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop11.jpg">
+                    <span class="tit">Various Artists</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">Various Artists</a>
+                        <a href="#" class="album-title">내 남편과 결혼해줘 OST</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop12.jpg">
+                    <span class="tit">릴러말즈 (Leellamarz)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">릴러말즈 (Leellamarz)</a>
+                        <a href="#" class="album-title">천국 가게 해주세요</a>
+                    </span>
+                </div>
+            </span>    
+        </div>
+
+        <div class="allcover">
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop13.jpg">
+                    <span class="tit">CITI (시티)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">CITI (시티)</a>
+                        <a href="#" class="album-title">Flower</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop14.jpg">
+                    <span class="tit">트라이비 (TRI.BE)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">트라이비 (TRI.BE)</a>
+                        <a href="#" class="album-title">Diamond</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop15.jpg">
+                    <span class="tit">에이피 알케미 (AP Alchemy)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">에이피 알케미 (AP Alchemy)</a>
+                        <a href="#" class="album-title">월간 AP - 2024년 2월</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop16.jpg">
+                    <span class="tit">부현석</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">부현석</a>
+                        <a href="#" class="album-title">NESW</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop17.jpg">
+                    <span class="tit">재주소년</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">재주소년</a>
+                        <a href="#" class="album-title">Anthology 2</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop18.jpg">
+                    <span class="tit">이더 (E the)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">이더 (E the)</a>
+                        <a href="#" class="album-title">SEE</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop19.jpg">
+                    <span class="tit">벤치위레오 (BenchWeLeo)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">벤치위레오 (BenchWeLeo)</a>
+                        <a href="#" class="album-title">Cold Brew</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop20.jpg">
+                    <span class="tit">서온</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">서온</a>
+                        <a href="#" class="album-title">초점</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop21.jpg">
+                    <span class="tit">스마일게이트알피지</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">스마일게이트알피지</a>
+                        <a href="#" class="album-title">로스트아크 OST : VOL.4 VOCAL TRACK</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop22.jpg">
+                    <span class="tit">aib (아입)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">aib (아입)</a>
+                        <a href="#" class="album-title">바래</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop23.jpg">
+                    <span class="tit">리피트 (Repeat)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">리피트 (Repeat)</a>
+                        <a href="#" class="album-title">길을 잃은 사람들에게 : 포기하지마</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop24.jpg">
+                    <span class="tit">이동윤</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">이동윤</a>
+                        <a href="#" class="album-title">궁궐의 맹수 OST PART.9</a>
+                    </span>
+                </div>
+            </span>
+        </div>
+
+        <div class="allcover">
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop25.jpg">
+                    <span class="tit">밈 (mim)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">밈 (mim)</a>
+                        <a href="#" class="album-title">버려진 왕녀는 반역한다 OST PART.24</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop26.jpg">
+                    <span class="tit">Shyloh (샤일로)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">Shyloh (샤일로)</a>
+                        <a href="#" class="album-title">Fallen Angel</a>
+                    </span>
+                </div>
+            </span>
+           
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop27.jpg">
+                    <span class="tit">여름눈</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">여름눈</a>
+                        <a href="#" class="album-title">여름,달</a>
+                    </span>
+                </div>
+            </span>
+          
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop28.jpg">
+                    <span class="tit">LOGI (로기)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">LOGI (로기)</a>
+                        <a href="#" class="album-title">거울</a>
+                    </span>
+                </div>
+            </span>
+           
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop29.jpg">
+                    <span class="tit">Hanhoryong &amp; mnrn</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">Hanhoryong &amp; mnrn</a>
+                        <a href="#" class="album-title">Mildish</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop30.jpg">
+                    <span class="tit">Joonand (주낸드)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">Joonand (주낸드)</a>
+                        <a href="#" class="album-title">사실은 나</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop31.jpg">
+                    <span class="tit">MUU (뮤)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">MUU (뮤)</a>
+                        <a href="#" class="album-title">Shooting Star</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop32.jpg">
+                    <span class="tit">LE SSERAFIM (르세라핌)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">LE SSERAFIM (르세라핌)</a>
+                        <a href="#" class="album-title">EASY</a>
+                    </span>
+                </div>
+            </span>
+           
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop33.jpg">
+                    <span class="tit">릴러말즈 (Leellamarz) &amp; 양홍원</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">릴러말즈 (Leellamarz) &amp; 양홍원</a>
+                        <a href="#" class="album-title">L&B</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop34.jpg">
+                    <span class="tit">LUN8 (루네이트)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">LUN8 (루네이트)</a>
+                        <a href="#" class="album-title">PASTEL</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop35.jpg">
+                    <span class="tit">PL (피엘)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">PL (피엘)</a>
+                        <a href="#" class="album-title">POOM</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop36.jpg">
+                    <span class="tit">바이미 (by me)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">바이미 (by me)</a>
+                        <a href="#" class="album-title">나의 별들아</a>
+                    </span>
+                </div>
+            </span>
+        </div>
+
+        <div class="allcover">
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop37.jpg">
+                    <span class="tit">최진호 (BlueWhale) &amp; everypage &amp; Dally (달리)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">최진호 (BlueWhale) &amp; everypage &amp; Dally (달리)</a>
+                        <a href="#" class="album-title">dailylife_2024.zip</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop38.jpg">
+                    <span class="tit">청담동 스트라이커</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">청담동 스트라이커</a>
+                        <a href="#" class="album-title">사랑은 눈꽃처럼</a>
+                    </span>
+                </div>
+            </span>
+          
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop39.jpg">
+                    <span class="tit">SIM2</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">SIM2</a>
+                        <a href="#" class="album-title">Away</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop40.jpg">
+                    <span class="tit">이신혁</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">이신혁</a>
+                        <a href="#" class="album-title">Cloud</a>
+                    </span>
+                </div>
+            </span>
+           
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop41.jpg">
+                    <span class="tit">X:IN (엑신)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">X:IN (엑신)</a>
+                        <a href="#" class="album-title">MY IDOL</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop42.jpg">
+                    <span class="tit">도화 (DOHVVA)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">도화 (DOHVVA)</a>
+                        <a href="#" class="album-title">All Is Love!</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop43.jpg">
+                    <span class="tit">릴러말즈 (Leellamarz) &amp; 식케이 (Sik-K) &amp; 김하온 (HAON)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">릴러말즈 (Leellamarz) &amp; 식케이 (Sik-K) &amp; 김하온 (HAON)</a>
+                        <a href="#" class="album-title">3=1</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop44.jpg">
+                    <span class="tit">임윤찬 (Yunchan Lim )</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">임윤찬 (Yunchan Lim )</a>
+                        <a href="#" class="album-title">Chopin : 12 Études, Op. 10 : No. 3 in E Major 'Tristesse'</a>
+                    </span>
+                </div>
+            </span>
+           
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop45.jpg">
+                    <span class="tit">VEKOEL (베코엘)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">VEKOEL (베코엘)</a>
+                        <a href="#" class="album-title">VVAY?</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop46.jpg">
+                    <span class="tit">Lay.bn</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">Lay.bn</a>
+                        <a href="#" class="album-title">OH I</a>
+                    </span>
+                </div>
+            </span>
+           
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop47.jpg">
+                    <span class="tit">kenessi</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">kenessi</a>
+                        <a href="#" class="album-title">Mess</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop48.jpg">
+                    <span class="tit">Mingginyu (밍기뉴)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">Mingginyu (밍기뉴)</a>
+                        <a href="#" class="album-title">그대의 차가운 손</a>
+                    </span>
+                </div>
+            </span>
+        </div>
+
+        <div class="allcover">
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop49.jpg">
+                    <span class="tit">Brick (브릭)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">Brick (브릭)</a>
+                        <a href="#" class="album-title">No Love</a>
+                    </span>
+                </div>
+            </span>
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop50.jpg">
+                    <span class="tit">W00R1 (우리) &amp; 브린 (Bryn)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">W00R1 (우리) &amp; 브린 (Bryn)</a>
+                        <a href="#" class="album-title">Catch Me</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop51.jpg">
+                    <span class="tit">DOKO (도코)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">DOKO (도코)</a>
+                        <a href="#" class="album-title">우린 서로일 때 빛이 나는 걸</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop52.jpg">
+                    <span class="tit">대건 &amp; 래현</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">대건 &amp; 래현</a>
+                        <a href="#" class="album-title">흔한 이별 노래</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop53.jpg">
+                    <span class="tit">아울러 (OWLER)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">아울러 (OWLER)</a>
+                        <a href="#" class="album-title">Amazing</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop54.jpg">
+                    <span class="tit">TPO</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">TPO</a>
+                        <a href="#" class="album-title">Goodbye</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop55.jpg">
+                    <span class="tit">더 데이지 (The Daisy)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">더 데이지 (The Daisy)</a>
+                        <a href="#" class="album-title">또 괜한 기대로</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop56.jpg">
+                    <span class="tit">혜화동소년</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">혜화동소년</a>
+                        <a href="#" class="album-title">고양이 귀여워</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop57.jpg">
+                    <span class="tit">seshin &amp; M3CHVNIC (메카닉)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">seshin &amp; M3CHVNIC (메카닉)</a>
+                        <a href="#" class="album-title">Still alive</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop58.jpg">
+                    <span class="tit">러브엑스테레오 (Love X Stereo)</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">러브엑스테레오 (Love X Stereo)</a>
+                        <a href="#" class="album-title">Future Unknown</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop59.jpg">
+                    <span class="tit">AVND</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">AVND</a>
+                        <a href="#" class="album-title">Hanako</a>
+                    </span>
+                </div>
+            </span>
+            
+
+            <span class="album-wrap">
+                <span class="mask">
+                    <input type="image" src="/img/kpop60.jpg">
+                    <span class="tit">이찬희</span>
+                </span>
+                <div class="info-album">
+                    <span class="hover_title">
+                        <a href="#" class="artist">이찬희</a>
+                        <a href="#" class="album-title">어떤 곳에</a>
+                    </span>
+                </div>
+            </span>  
+        </div>
+    </div>
+
+    <div class="banner">
+        <img src="/img/banner1.jpg" alt="배너1">
+        <img src="/img/banner2.jpg" alt="배너2">
+    </div>
+
+    <div class="list">
+        <div class="chart">
+            <h2 class="sub_title">
+                <a href="#">실시간 차트</a>
+            </h2>
+            <table>
+                <tr>
+                    <td class="number"><em>1</em></td>
+                    <td class="rank">-</td>
+                    <td class="info">
+                        <div>Love wins all</div>
+                        <div>아이유(IU)</div>
+                    </td>
+                    <td class="table_bttn"><a href="#" class="bttn"><img src="/img/playbttn.png" alt=""></a></td>
+                    <td class="table_bttn"><a href="#" class="bttn"><img src="/img/addbttn.png" alt=""></a></td>
+                    <td class="more"><a href="#" class="bttn"><img src="/img/morebttn.png" alt=""></a></td>
+                </tr>
+                <tr>
+                    <td class="number"><em>2</em></td>
+                    <td class="rank">-</td>
+                    <td class="info">
+                        <div>비의 랩소디</div>
+                        <div>임재현</div>
+                    </td>
+                    <td class="table_bttn"><a href="#" class="bttn"><img src="/img/playbttn.png" alt=""></a></td>
+                    <td class="table_bttn"><a href="#" class="bttn"><img src="/img/addbttn.png" alt=""></a></td>
+                    <td><a href="#" class="bttn"><img src="/img/morebttn.png" alt=""></a></td>
+                </tr>
+                <tr>
+                    <td class="number"><em>3</em></td>
+                    <td class="rank">-</td>
+                    <td class="info">
+                        <div>에피소드</div>
+                        <div>이무진</div>
+                    </td>
+                    <td class="table_bttn"><a href="#" class="bttn"><img src="/img/playbttn.png" alt=""></a></td>
+                    <td class="table_bttn"><a href="#" class="bttn"><img src="/img/addbttn.png" alt=""></a></td>
+                    <td><a href="#" class="bttn"><img src="/img/morebttn.png" alt=""></a></td>
+                </tr>
+                <tr>
+                    <td class="number"><em>4</em></td>
+                    <td class="rank">-</td>
+                    <td class="info">
+                        <div>첫 만남은 계획대로 되지 않아</div>
+                        <div>TWS (투어스)</div>
+                    </td>
+                    <td class="table_bttn"><a href="#" class="bttn"><img src="/img/playbttn.png" alt=""></a></td>
+                    <td class="table_bttn"><a href="#" class="bttn"><img src="/img/addbttn.png" alt=""></a></td>
+                    <td><a href="#" class="bttn"><img src="/img/morebttn.png" alt=""></a></td>
+                </tr>
+                <tr>
+                    <td class="number"><em>5</em></td>
+                    <td class="rank">-</td>
+                    <td class="info">
+                        <div>To. X</div>
+                        <div>태연(TAEYEON)</div>
+                    </td>
+                    <td class="table_bttn"><a href="#" class="bttn"><img src="/img/playbttn.png" alt=""></a></td>
+                    <td class="table_bttn"><a href="#" class="bttn"><img src="/img/addbttn.png" alt=""></a></td>
+                    <td><a href="#" class="bttn"><img src="/img/morebttn.png" alt=""></a></td>
+                </tr>
+                <tr>
+                    <td class="number"><em>6</em></td>
+                    <td class="rank">-</td>
+                    <td class="info">
+                        <div>Love 119</div>
+                        <div>RIIZE</div>
+                    </td>
+                    <td class="table_bttn"><a href="#" class="bttn"><img src="/img/playbttn.png" alt=""></a></td>
+                    <td class="table_bttn"><a href="#" class="bttn"><img src="/img/addbttn.png" alt=""></a></td>
+                    <td><a href="#" class="bttn"><img src="/img/morebttn.png" alt=""></a></td>
+                </tr>
+                <tr>
+                    <td class="number"><em>7</em></td>
+                    <td class="rank">-</td>
+                    <td class="info">
+                        <div>예뻤어</div>
+                        <div>DAY6(데이식스)</div>
+                    </td>
+                    <td class="table_bttn"><a href="#" class="bttn"><img src="/img/playbttn.png" alt=""></a></td>
+                    <td class="table_bttn"><a href="#" class="bttn"><img src="/img/addbttn.png" alt=""></a></td>
+                    <td><a href="#" class="bttn"><img src="/img/morebttn.png" alt=""></a></td>
+                </tr>
+                <tr>
+                    <td class="number"><em>8</em></td>
+                    <td class="rank">-</td>
+                    <td class="info">
+                        <div>Perfect Night</div>
+                        <div>LE SSERAFIM(르세라핌)</div>
+                    </td>
+                    <td class="table_bttn"><a href="#" class="bttn"><img src="/img/playbttn.png" alt=""></a></td>
+                    <td class="table_bttn"><a href="#" class="bttn"><img src="/img/addbttn.png" alt=""></a></td>
+                    <td><a href="#" class="bttn"><img src="/img/morebttn.png" alt=""></a></td>
+                </tr>
+                <tr>
+                    <td class="number"><em>9</em></td>
+                    <td class="rank">-</td>
+                    <td class="info">
+                        <div>헤어지자 말해요</div>
+                        <div>박재정</div>
+                    </td>
+                    <td class="table_bttn"><a href="#" class="bttn"><img src="/img/playbttn.png" alt=""></a></td>
+                    <td class="table_bttn"><a href="#" class="bttn"><img src="/img/addbttn.png" alt=""></a></td>
+                    <td><a href="#" class="bttn"><img src="/img/morebttn.png" alt=""></a></td>
+                </tr>
+                <tr>
+                    <td class="number"><em>10</em></td>
+                    <td class="rank">-</td>
+                    <td class="info">
+                        <div>Wife</div>
+                        <div>(여자)아이들</div>
+                    </td>
+                    <td class="table_bttn"><a href="#" class="bttn"><img src="/img/playbttn.png" alt=""></a></td>
+                    <td class="table_bttn"><a href="#" class="bttn"><img src="/img/addbttn.png" alt=""></a></td>
+                    <td><a href="#" class="bttn"><img src="/img/morebttn.png" alt=""></a></td>
+                </tr>
+            </table>
+            <div class="toolbar">
+                <div class="bttn_bttn">
+                    <a href="#">전체듣기</a>
+                    <a href="#">전체추가</a>
+                </div>
+                <div class="bttn_right"><a href="#">TOP200 바로가기 ></a></div>
+            </div>
+        </div>
+        <div class="slideshow">
+            <div class="sidetitle">
+                <h2 class="sub_title">
+                    <a href="#">HOT & NEW</a>
+                </h2>
+            </div>
+            <div id="slides">
+                <img src="/img/slideimg1.jpg" alt="1">
+                <img src="/img/slideimg2.jpg" alt="2">
+                <img src="/img/slideimg3.jpg" alt="3">
+                <img src="/img/slideimg4.jpg" alt="4">
+                <button id ="prev">&lang;</button>
+                <button id ="next">&rang;</button>
+            </div>
+            <div style="text-align:center" class="mini_dot">
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+            </div>
+            <div class="sidetitle">
+                <ul>
+                    <li><span class="mask"><img src="/img/sideminiimg1.jpg" alt=""></span>
+                        <div class="mini_title">
+                            <p class="textblue">NEW ALBUM</p>
+                            <p class="texttitle">SAVE ME</p>
+                            <p class="artist">아우릴고트 (OUREALGOAT)</p>
+                        </div>
+                    </li>
+                    
+                    <li><span class="mask"><img src="/img/sideminiimg2.jpg" alt=""></span>
+                            <div class="mini_title">
+                            <p class="textblue">NEW ALBUM</p>
+                            <p class="texttitle">천국 가게 해주세요</p>
+                            <p class="artist">릴러말즈 (Leellamarz)</p>
+                            </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="editor">
+        <h2 class="sub_title"><a href="#">에디터추천</a></h2>
+        <ul class="editorPick">
+            <li>
+                <a href="#">
+                    <div class="cover">
+                        <img src="/img/editorcover1.jpg" alt="">
+                    </div>
+                    <div class="editorinfo">
+                        <span class="editorCate">추천선곡</span>
+                        <p class="editortitle">막히는 도로 위를 뻥 뚫어주는 듯한 노래</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="cover">
+                        <img src="/img/editorcover2.jpg" alt="">
+                    </div>
+                    <div class="editorinfo">
+                        <span class="editorCate">추천선곡</span>
+                        <p class="editortitle">새해를 맞이하며 듣기좋은 노래</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="cover">
+                        <img src="/img/editorcover3.jpg" alt="">
+                    </div>
+                    <div class="editorinfo">
+                        <span class="editorCate">추천선곡</span>
+                        <p class="editortitle">신선한 여름밤을 달리는 러너에게 전하는 플레이리스트</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="cover">
+                        <img src="/img/editorcover4.jpg" alt="">
+                    </div>
+                    <div class="editorinfo">
+                        <span class="editorCate">추천선곡</span>
+                        <p class="editortitle">차트도, 내 플리도 점령한 대세 걸그룹</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="cover">
+                        <img src="/img/editorcover5.jpg" alt="">
+                    </div>
+                    <div class="editorinfo">
+                        <span class="editorCate">추천선곡</span>
+                        <p class="editortitle">추운 겨울 따뜻함을 책임지는 K-캐롤 모음!</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="cover">
+                        <img src="/img/editorcover6.jpg" alt="">
+                    </div>
+                    <div class="editorinfo">
+                        <span class="editorCate">추천선곡</span>
+                        <p class="editortitle">우리가 남이 된 날, 이별 후 들으면 눈물 나는 플리</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="cover">
+                        <img src="/img/editorcover7.jpg" alt="">
+                    </div>
+                    <div class="editorinfo">
+                        <span class="editorCate">추천선곡</span>
+                        <p class="editortitle">듣고 있으면 마음이 편안해지는 플리</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="cover">
+                        <img src="/img/editorcover8.jpg" alt="">
+                    </div>
+                    <div class="editorinfo">
+                        <span class="editorCate">추천선곡</span>
+                        <p class="editortitle">와인에는 이런 음악을 - 와인이 좋아할 음악 큐레이션</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="music_video">
+        <h2 class="sub_title"><a href="#">영상</a></h2>
+        <ul class="mvlist">
+            <li>
+                <a href="#">
+                    <div class="mv">
+                        <iframe width="226" height="127" src="https://www.youtube.com/embed/6f3RzjXPQwA?autoplay=1&mute=1&loop=1&playlist=6f3RzjXPQwA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="mvinfo">
+                        <span class="mvCate">뮤비</span>
+                        <p class="mvtitle"> Super Lady</p>
+                        <p class="mvartist">(여자)아이들</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="mv">
+                        <iframe width="226" height="127" src="https://www.youtube.com/embed/JleoAppaxi0?autoplay=1&mute=1&loop=1&playlist=JleoAppaxi0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="mvinfo">
+                        <span class="mvCate">뮤비</span>
+                        <p class="mvtitle">  Love wins all</p>
+                        <p class="mvartist">아이유 (IU)</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="mv">
+                        <iframe width="226" height="127" src="https://www.youtube.com/embed/Da4P2uT4mVc?autoplay=1&mute=1&loop=1&playlist=Da4P2uT4mVc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="mvinfo">
+                        <span class="mvCate">뮤비</span>
+                        <p class="mvtitle">Baddie</p>
+                        <p class="mvartist">IVE 아이브</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="mv">
+                        <iframe width="226" height="127" src="https://www.youtube.com/embed/smdmEhkIRVc?autoplay=1&mute=1&loop=1&playlist=smdmEhkIRVc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="mvinfo">
+                        <span class="mvCate">뮤비</span>
+                        <p class="mvtitle">밤양갱</p>
+                        <p class="mvartist">비비 (BIBI)</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <div class="footinfo">
+            <div class="clearfix">
+                <div class="footleft">
+                    <ul>
+                        <li>회사소개</li>
+                        <li>이용약관</li>
+                        <li>개인정보처리방침</li>
+                        <li>청소년보호정책</li>
+                        <li>위치기반 서비스 이용약관</li>
+                        <li>이메일주소무단수집거부</li>
+                        <li>서비스이용문의</li>
+                        <li>제휴 문의</li>
+                    </ul>
+                </div>
+                <div class="footright">
+                    <ul>
+                        <li>
+                            <a href="https://www.youtube.com/user/ktmusicable" class="btn-youtube" target="_blank" title="새창 열림"><img src="/img/youtube.png" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="https://blog.naver.com/genieplay/" class="btn-blog" target="_blank" title="새창 열림"><img src="/img/blog.png" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/genieplay" class="btn-fb" target="_blank" title="새창 열림"><img src="/img/facebook.png" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="company">
+            <img src="/img/footlogo.png" alt="">
+            <ul>
+                <li>대표이사 천상준</li>
+                <li>충청북도 청주시 상당구 용담로 7</li>
+                <li>사업자등록번호 xxx-xx-xxxxx</li>
+                <li>통신판매일 신고 2013-충북청주-01302</li>
+                <li>개인정보보호책임자 천상준 본부장</li>
+                <li>서비스문의: 5144-8677</li>
+                <li>youex1212@naver.com</li>
+                <li>사업자정보확인 > |호스팅제공자:(주)지니뮤직 |</li>
+                <li>COPYRIGHTⓒGENIE MUSIC CORP ALL RIGHTS RESERVED.</li>
+            </ul>
+            <ul class="list_emblem">
+                <li><img src="/img/footbot1.png" alt=""></li>
+                <li><img src="/img/footbot2.png" alt=""></li>
+                <li><img src="/img/footbot3.png" alt=""></li>
+                <li><img src="/img/footbot4.png" alt=""></li>
+                <li><img src="/img/footbot5.png" alt=""></li>
+                <li><img src="/img/footbot6.png" alt=""></li>
+                <li><img src="/img/footbot7.png" alt=""></li>
+                <li><img src="/img/footbot8.png" alt=""></li>
+            </ul>
+        </div>
+    </div>
+    <script src="slide.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>
